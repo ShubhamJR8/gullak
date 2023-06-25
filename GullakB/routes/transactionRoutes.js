@@ -6,8 +6,8 @@ const router = express.Router()
 router.post('/', createTransaction);
 router.get('/:id', getaTransaction);
 router.get('/', getAllTransaction);
-router.put('/:id', updateTransaction);
-router.delete('/:id', deleteTransaction);
+// router.put('/:id', updateTransaction);
+// router.delete('/:id', deleteTransaction);
 // router.get('/api/users/:userId/transactions', getAllTransaction); will be in user routes
 
 

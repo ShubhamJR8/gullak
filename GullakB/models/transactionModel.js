@@ -7,18 +7,17 @@ const transactionSchema = new mongoose.Schema({
       required: true
     },
     amount: {
-      type: Number,
+      type: String,
       required: true
     },
     type: {
       type: String,
       enum: ['add', 'redeem'],
       required: true
-    },
-    date: {
-      type: Date,
-      default: Date.now
     }
-  });
+  },
+  {
+    timestamps: true
+});
   
-  const Transaction = mongoose.model('Transaction', transactionSchema);
+  module.exports = mongoose.model('Transaction', transactionSchema);

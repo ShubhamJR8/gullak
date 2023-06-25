@@ -1,11 +1,19 @@
 const Transaction = require("../models/transactionModel");
 const asyncHandler = require("express-async-handler");
-const slugify = require("slugify");
+
 
 // create a Transaction
 const createTransaction = asyncHandler(async (req, res) => {
-    res.send('first');
-});
+    try {
+        const newTransaction = await Transaction.create(req.body)
+        res.json(newTransaction)
+    } catch (error) {
+        // Handle any errors that occur during the process
+        console.error('Error creating transaction:', error);
+        throw error;
+    }
+    });
+
 
 // get a Transaction
 const getaTransaction = asyncHandler(async (req, res) => {
